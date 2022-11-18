@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>| o | Circle Game | o |</title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            body{
+                margin: 0;
+                background: white;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    
+    <body onLoad="window.scroll(0, 5000)">
+        <div class="fixed text-black text-sm ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl">0</span></div><br>
+        <div class="fixed text-black text-sm ml-2 mt-1 select-none"><span id="abilityType">Stop Time </span><span id="abilityNumEl">: 0</span></div>
+        
+        <div id="buttonTutorial"class="fixed inset-0 flex items-center justify-center" >
+            <div class="bg-black max-w-md w-full p-6 text-center">
+                <br><br>
+                <span class="text-xl text-white mb-4 text-center flex items-center justify-center select-none">Use W, A, S, and D to move Up, Left, Down, and Right</span>
+                <br>
+                <div>
+                    <button id="MoveAroundBtn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm text-center flex items-center justify-center select-none">Try it</button>
+                </div>
+            </div>
+        </div>
+        <div id="abilityTutorial"class="hidden fixed inset-0 flex items-center justify-center " >
+            <div class="bg-black max-w-md w-full p-6 text-center">
+                <br><br>
+                <span class="text-xl text-white mb-4 select-none">Use the up and down arrow key to cycle throught the abilitys and use q to use these abilitys to aviod the circles coming at you</span>
+                <br><br><br>
+                <div>
+                    <button id="useAbilityBtn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm select-none">Try it</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="finalTutorial"class="hidden fixed inset-0 flex items-center justify-center " >
+            <div class="bg-black max-w-md w-full p-6 text-center">
+                <br><br>
+                <span class="text-xl text-white mb-4 select-none">Now you can try the real thing click start to start the game</span>
+                <br><br><br>
+                <div>
+                    <button id="firstStartBtn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm select-none">Start</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modleEl"class="hidden fixed inset-0 flex items-center justify-center " >
+            <div class="bg-black max-w-md w-full p-6 text-center">
+                <h1 id="bigScoreEl"class="text-4xl font-bold leading-none text-white select-none">0</h1>
+                <p class="text-sm text-white mb-4 select-none" >Points</p>
+                <div>
+                    <button id="shopBtn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm select-none">Shop</button>
+                </div>
+                <br>
+                <div>
+                    <button id="startGameBtn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm select-none">Restart Game</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="shopEl"class="hidden fixed inset-0 flex items-center justify-center">
+            <div class="bg-black max-w-md w-full p-6 text-center">
+                <span class="text-sm text-white mb-4 select-none" >Points: </span><span id="pointsEl" class="text-sm text-white mb-4 select-none">0</span>
+                <div>
+                    <button id="BuySlowMoBtn" class="bg-red-500 text-white w-12 py-3 rounded-full text-sm select-none">Buy</button>
+                    <button id="BuyTeleportBtn" class="bg-red-500 text-white w-12 py-3 rounded-full text-sm select-none">Buy</button>
+                    <button id="WIPBtn" class="bg-red-500 text-white w-12 py-3 rounded-full text-sm select-none">Buy</button>
+                </div>
+                <div>
+                    <span id="stopPotions"class="text-sm text-white mb-4 select-none"></span>
+                    <span id="teleportPotions"class="text-sm text-white mb-4 select-none"></span>
+                    <span class="text-sm text-white mb-4 select-none">0</span>
+                </div>
+                <div>
+                    <span class="text-sm text-white mb-4 select-none">Stop Time</span>
+                    <span class="text-sm text-white mb-4 select-none">|| Teleport ||</span>
+                    <span class="text-sm text-white mb-4 select-none">WIP</span>
+                </div>
+                <div>
+                    <span class="text-sm text-white mb-4 select-none">Cost: 1000 ||</span>
+                    <span class="text-sm text-white mb-4 select-none">Cost: 500 ||</span>
+                    <span class="text-sm text-white mb-4 select-none">Cost: WIP</span>
+                </div>
+                <div>
+                    <button id="startGameBtnn"class="bg-red-500 text-white w-full py-3 rounded-full text-sm select-none">Restart Game</button>
+                </div>
+            </div>
+        </div>
+        
+        <canvas></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
